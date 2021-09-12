@@ -183,7 +183,11 @@ if __name__ == "__main__":
     ) as file:
         se, pe, al, im, co = imcs.values()
 
-        for i in range(qtd_imcs, len(im)):
-            file.write(f"\n{se[i]},{pe[i]:.2f},{al[i]:.2f},{im[i]:.2f},{co[i]}")
+        try:
+            for i in range(qtd_imcs, len(im)):
+                file.write(f"\n{se[i]},{pe[i]:.2f},{al[i]:.2f},{im[i]:.2f},{co[i]}")
+        
+        except:
+            pass
 
     window_1.close()
